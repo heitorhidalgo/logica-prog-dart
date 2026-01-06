@@ -1,8 +1,29 @@
 void main() {
 
-  String? nome; //? antes de um tipo de variavel, pode ser um valor nulo
-  print(nome!); //! mesmo que a variavel possa ser nula, com o ! garatimos que ela nao pode ser nula
+  bool seguirEmFrente = true;
 
-  late String sobrenome;
-  print(sobrenome); //late, apos a variavel ser inicializada, nao pode mais ser null
+  if(seguirEmFrente){
+    print("Andar");
+  }else{
+    print("Parar");
+  }
+
+  if(10 > 5) {
+    print("10 eh maior que 5");
+  }
+
+  int valorInt = 3;
+  switch (valorInt) {
+    case 0:
+      print("zero");
+      break;
+    case 1:
+      print("um");
+      break;
+    case 2:
+      print("dois");
+      break;
+    default:
+      print("padrao");
+  }
 }
