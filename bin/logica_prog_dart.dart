@@ -1,31 +1,22 @@
-class Celular {
-  //construtor
-  final String cor; //atributos
-  final int qntdProcessador; //final quer dizer que a variavel so pode receber um valor uma unica vez
-  final double tamanho;
-  final double peso;
+class Carro {
+  final String modelo;
+  String _segredo = 'Muito caro'; //_ quer dizer que eh privada
+  int _valor = 100000;
 
-  Celular(this.cor,
-      this.qntdProcessador,
-      this.tamanho,
-      this.peso);
+  void setValue(int valor) => _valor = valor;
 
-  String toString() {
-    // metodo
-    return "Cor $cor, Processadores $qntdProcessador, Tamanho $tamanho, Peso $peso ";
-  }
+  int get valorDoCarro => _valor;
 
-  double valor(double valor){
-    return valor*qntdProcessador;
-  }
+  Carro(
+      this.modelo
+      );
 }
 
 
 void main() {
-  Celular celularApple = Celular('Roxo', 5, 0.5, 6);
-  Celular celularSamsung = Celular('Preto', 6, 0.7, 8);
 
-  print(celularApple.toString());
-  print(celularSamsung.toString());
-  print(celularApple.valor(1000));
+  Carro Corsa = Carro("Corsa");
+  Carro Gol = Carro("Gol");
+  Carro Bmw = Carro("Bmw");
+
 }
