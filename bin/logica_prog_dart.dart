@@ -1,22 +1,56 @@
-class Carro {
-  final String modelo;
-  String _segredo = 'Muito caro'; //_ quer dizer que eh privada
-  int _valor = 100000;
+abstract class Animal{
+  String comunicar();
 
-  void setValue(int valor) => _valor = valor;
+}
 
-  int get valorDoCarro => _valor;
+class Pessoa implements Animal { // interface
+  String comunicar(){
+  return "Ola mundo";
+  }
+}
 
-  Carro(
-      this.modelo
-      );
+class Gato implements Animal{
+  String comunicar(){
+    return "Miau";
+  }
+}
+
+class GuerreiroZ {
+  String falar(){
+    return "Oi eu sou o Goku";
+  }
+}
+
+class Goku extends GuerreiroZ { // heranca
+
 }
 
 
+abstract class Pagamento {
+  void pagar();
+}
+
+class PagarComBoleto implements Pagamento{ // polimorfismo
+  void pagar(){
+    print("Pagando com boleto");
+  }
+}
+
+class PagarComPix implements Pagamento{
+  void pagar(){
+    print("Pagando com pix");
+  }
+}
+
 void main() {
 
-  Carro Corsa = Carro("Corsa");
-  Carro Gol = Carro("Gol");
-  Carro Bmw = Carro("Bmw");
+ Goku goku = Goku();
+ print(goku.falar());
+
+ Pagamento pagamento = PagarComBoleto();
+ pagamento.pagar();
+
+ pagamento = PagarComPix();
+ pagamento.pagar();
 
 }
