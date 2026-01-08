@@ -1,20 +1,10 @@
 
-import 'dart:convert';
-
 void main() {
+  BuscarAlunos buscarAlunos = BuscarAlunos();
+  buscarAlunos();
 
-  String json = '''
-  {
-    "usuario": "heitorhidalgo@gmail.com",
-    "senha": 12345,
-    "permissoes": [
-    "owner", "admin"
-    ]
-  }
-''';
+}
 
-  print(json);
-
-  Map resultJson = jsonDecode(json);
-  print(resultJson["permissoes"][0]);
+class BuscarAlunos{
+  void call() => print("heitor, hidalgo"); // callable interface
 }
