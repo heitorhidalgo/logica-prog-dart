@@ -1,10 +1,17 @@
-
 void main() {
-  BuscarAlunos buscarAlunos = BuscarAlunos();
-  buscarAlunos();
 
+  try {//tentar alguma coisa
+    print((2/0).toInt());
+  } catch (e) {//captura o erro
+    print("printando erro");
+    // rethrow; //propagar o erro
+    // throw Exception("Ocorreu um erro");
+    throw CustomError("erro customizado");
+  }
 }
 
-class BuscarAlunos{
-  void call() => print("heitor, hidalgo"); // callable interface
+class CustomError implements Exception {
+  final String error;
+  CustomError(this.error);
 }
+
