@@ -1,17 +1,10 @@
-void main() {
-
-  try {//tentar alguma coisa
-    print((2/0).toInt());
-  } catch (e) {//captura o erro
-    print("printando erro");
-    // rethrow; //propagar o erro
-    // throw Exception("Ocorreu um erro");
-    throw CustomError("erro customizado");
+extension ExtensionString on String {
+  String toFirstCharToUpperCase() {
+    return this[0].toUpperCase() + this.substring(1);
   }
 }
 
-class CustomError implements Exception {
-  final String error;
-  CustomError(this.error);
+void main() {
+  String name = 'heitor';
+  print(name.toFirstCharToUpperCase()); //basta chamar o extension
 }
-
