@@ -1,16 +1,29 @@
 
-void main() async { // vai esperar algo
+void main() {
 
-  String name = "Heitor";
-  Future <String> cepFuture = getCepByName("Av Jose Munia");
-  late String cep;
+  List<String> lista = ['Heitor', 'Hidalgo'];
 
-  cep = await cepFuture; // esperar aqui
 
-  print(cep);
-}
-//external services
-Future<String> getCepByName(String name){
-  //simulando uma requisicao
-  return Future.value("15090500");
+  //  chave, valor
+  Map<String, String> mapa = {'chave':'valor'};
+  print(mapa['chave']);
+
+  mapa['novaChaveDois'] = 'novoValorDois';
+  print(mapa);
+
+  mapa.remove('chave');
+  print(mapa);
+
+  mapa['novaChaveDois'] = 'atualizado';
+  print(mapa);
+
+  mapa.update('novaChaveDois', (value) => 'atualizando2');
+  print(mapa);
+
+  mapa.forEach((chave, valor) => print('a chave eh: $chave, o valor eh $valor'));
+
+  mapa.keys.forEach(print);
+
+  mapa.values.forEach(print);
+
 }
